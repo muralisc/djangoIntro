@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Blog Login</a></h1>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-3">
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <input name="username" type="text" class="form-control" placeholder="Username"/>
+                        <input name="password" type="password" class="form-control" placeholder="Password"/>
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </form>
+                    <a href="/create">Create User</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
