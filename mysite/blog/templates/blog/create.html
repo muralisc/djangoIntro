@@ -15,14 +15,16 @@
                 <div class="col-md-3">
                     <form method="post" action="">
                         {% csrf_token %}
-                        <h1>//uname//<h1>
+                        <h1>//err_uname//<h1>
                         <input 
                             name="username" 
                             type="text" 
                             class="form-control" 
                             placeholder="Username" 
-                            ng-model="uname"/>
-                        <input name="email" type="text" class="form-control" placeholder="Username"/>
+                            ng-model="uname"
+                            ng-blur="verify()"
+                            />
+                        <input name="email" type="text" class="form-control" placeholder="Email"/>
                         <input name="password" type="password" class="form-control" placeholder="Password"/>
                         <input type="submit" value="Submit" class="btn btn-primary">
                     </form>
@@ -41,6 +43,14 @@
         });
 
     customApp.controller('BlogCtrl', function ($scope) {
+        $scope.verify = function(){
+            if( $scope.uname.length < 10 ){
+                $scope.err_uname="";
+            }
+            else{
+                $scope.err_uname="Cannot be more than 10char";
+            }
+        }
     });
     </script>
 </html>
