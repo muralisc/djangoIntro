@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from .forms import PostForm
+from .models import Post
 
 # Create your views here.
 def post_list(request):
-    return render(request, 'blog/post_list.html', {})
+    posts = Post.objects.all()
+    return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_new(request):
     if request.method == "POST":
