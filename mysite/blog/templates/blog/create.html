@@ -26,7 +26,12 @@
                             />
                         <input name="email" type="text" class="form-control" placeholder="Email"/>
                         <input name="password" type="password" class="form-control" placeholder="Password"/>
-                        <input type="submit" value="Submit" class="btn btn-primary">
+                        <div ng-if="asubmit">
+                        <input type="submit" class="btn btn-primary" ng-click="" value="Submit" />
+                        </div>
+                        <div ng-if="!asubmit">
+                        <input type="submit" class="btn btn-primary disabled" value="Submit" />
+                        </div>
                     </form>
                 </div>
             </div>
@@ -43,12 +48,15 @@
         });
 
     customApp.controller('BlogCtrl', function ($scope) {
+        $scope.asubmit=false;
         $scope.verify = function(){
             if( $scope.uname.length < 10 ){
                 $scope.err_uname="";
+                $scope.asubmit=true;
             }
             else{
                 $scope.err_uname="Cannot be more than 10char";
+                $scope.asubmit=false;
             }
         }
     });
