@@ -1,11 +1,11 @@
-<html>
+<html ng-app="blogapp">
     <head>
         <title>Django Girls blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     </head>
-    <body>
+    <body  ng-controller="BlogCtrl" >
         <div class="page-header">
             <h1><a href="/">Blog User Create</a></h1>
         </div>
@@ -15,7 +15,13 @@
                 <div class="col-md-3">
                     <form method="post" action="">
                         {% csrf_token %}
-                        <input name="username" type="text" class="form-control" placeholder="Username"/>
+                        <h1>//uname//<h1>
+                        <input 
+                            name="username" 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Username" 
+                            ng-model="uname"/>
                         <input name="email" type="text" class="form-control" placeholder="Username"/>
                         <input name="password" type="password" class="form-control" placeholder="Password"/>
                         <input type="submit" value="Submit" class="btn btn-primary">
@@ -24,4 +30,17 @@
             </div>
         </div>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+    var customApp = angular.module('blogapp', []);
+
+    customApp.config(function($interpolateProvider) {
+        $interpolateProvider.startSymbol('//');
+        $interpolateProvider.endSymbol('//');
+        });
+
+    customApp.controller('BlogCtrl', function ($scope) {
+    });
+    </script>
 </html>
