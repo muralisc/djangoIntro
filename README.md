@@ -2,6 +2,7 @@
 Prepared for [CS251 at IIT Bombay][1].
 
 The tutorial is broken into steps ( see repo tags ).
+Checkout various steps using gitk.
 
 Accompanying [Slides][2]
 
