@@ -1,6 +1,8 @@
 ### Django and Angular Intro
 Prepared for [CS251 at IIT Bombay][1].
 
+The tutorial is broken into steps ( see repo tags ).
+
 Accompanying [Slides][2]
 
 Adopted and extended from [Django Girls Tutorial][3]
